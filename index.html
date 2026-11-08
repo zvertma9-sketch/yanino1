@@ -65,9 +65,6 @@
                     <button onclick="showSection('emergency')" class="px-3 py-2 rounded-lg text-sm font-bold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-950/55 transition flex items-center gap-1.5">
                         <i class="fa-solid fa-phone-volume animate-bounce"></i> Экстренные службы
                     </button>
-                    <button onclick="showSection('shelters')" class="px-3 py-2 rounded-lg text-sm font-bold text-amber-600 dark:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/55 transition flex items-center gap-1.5">
-                        <i class="fa-solid fa-person-shelter text-base"></i> Укрытия при ЧС
-                    </button>
                     <button onclick="showSection('problems')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Проблемы</button>
                     <button onclick="showSection('deputies')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Депутаты</button>
                     <button onclick="showSection('contacts')" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Куда писать</button>
@@ -98,9 +95,8 @@
         <!-- Mobile menu dropdown -->
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-4 space-y-1 shadow-lg">
             <button onclick="showSection('emergency'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-bold text-red-600 dark:text-red-400 bg-red-50 dark:bg-red-950/40">🚨 Экстренные службы</button>
-            <button onclick="showSection('shelters'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40">🛡️ Укрытия при ЧС</button>
             <button onclick="showSection('problems'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Проблемы Янино-1</button>
-            <button onclick="showSection('deputies'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Депутаты</button>
+            <button onclick="showSection('deputies'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Депутаты и партии</button>
             <button onclick="showSection('contacts'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Куда писать</button>
             <button onclick="showSection('generator'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Конструктор обращений</button>
             <button onclick="showSection('feedback'); closeMobileMenu();" class="block w-full text-left px-3 py-2.5 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">Обратная связь</button>
@@ -121,11 +117,12 @@
                         Вместе сделаем <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Янино-1</span> комфортнее!
                     </h1>
                     <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-10 leading-relaxed">
-                        Единая информационная база и удобный инструмент для жителей. Выберите интересующий раздел ниже, чтобы посмотреть экстренные телефоны, адреса укрытий, реестр проблем или составить обращение.
+                        Единая информационная база и удобный инструмент для жителей. Выберите интересующий раздел ниже, чтобы посмотреть экстренные телефоны, реестр укрытий, список проблем или контакты депутатов.
                     </p>
                     
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                        <button onclick="showSection('emergency')" class="flex flex-col items-center justify-center p-6 bg-red-50 dark:bg-red-950/40 rounded-2xl border-2 border-red-500/40 shadow-sm hover:shadow-md hover:border-red-600 transition group">
+                        
+                        <button onclick="showSection('emergency')" class="flex flex-col items-center justify-center p-6 bg-red-50 dark:bg-red-950/40 rounded-2xl border-2 border-red-500/40 shadow-sm hover:shadow-md hover:border-red-600 transition group sm:col-span-2 lg:col-span-1">
                             <div class="w-12 h-12 rounded-xl bg-red-500 text-white flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition shadow-md shadow-red-500/30">
                                 <i class="fa-solid fa-phone-volume animate-pulse"></i>
                             </div>
@@ -133,12 +130,12 @@
                             <span class="text-xs text-red-600/80 dark:text-red-400 mt-1">Телефоны первой помощи</span>
                         </button>
 
-                        <button onclick="showSection('shelters')" class="flex flex-col items-center justify-center p-6 bg-amber-50 dark:bg-amber-950/40 rounded-2xl border-2 border-amber-500/40 shadow-sm hover:shadow-md hover:border-amber-600 transition group">
+                        <button onclick="openShelterModal()" class="flex flex-col items-center justify-center p-6 bg-gradient-to-br from-amber-50 to-amber-100/60 dark:from-amber-950/40 dark:to-slate-900 rounded-2xl border-2 border-amber-500/50 shadow-sm hover:shadow-md hover:border-amber-600 transition group">
                             <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition shadow-md shadow-amber-500/30">
-                                <i class="fa-solid fa-person-shelter"></i>
+                                <i class="fa-solid fa-shield-halved"></i>
                             </div>
-                            <span class="font-bold text-amber-700 dark:text-amber-300 text-sm">Укрытия при ЧС</span>
-                            <span class="text-xs text-amber-600/80 dark:text-amber-400 mt-1">Карта и адреса подвалов</span>
+                            <span class="font-bold text-amber-900 dark:text-amber-200 text-sm">Укрытия и ЗС ГО</span>
+                            <span class="text-xs text-amber-700/80 dark:text-amber-400 mt-1">Реестр МЧС и адреса</span>
                         </button>
 
                         <button onclick="showSection('problems')" class="flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-blue-500 transition group">
@@ -146,7 +143,15 @@
                                 <i class="fa-solid fa-list-check"></i>
                             </div>
                             <span class="font-bold text-slate-900 dark:text-white text-sm">Реестр проблем</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Поликлиника, сады, дороги</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Поликлиника, школы и др.</span>
+                        </button>
+
+                        <button onclick="showSection('deputies')" class="flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-blue-500 transition group">
+                            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">
+                                <i class="fa-solid fa-landmark-flag"></i>
+                            </div>
+                            <span class="font-bold text-slate-900 dark:text-white text-sm">Депутаты и партии</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Контакты и график приемов</span>
                         </button>
 
                         <button onclick="showSection('generator')" class="flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-blue-500 transition group">
@@ -154,15 +159,7 @@
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </div>
                             <span class="font-bold text-slate-900 dark:text-white text-sm">Конструктор писем</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Создать обращение</span>
-                        </button>
-
-                        <button onclick="showSection('deputies')" class="flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-blue-500 transition group">
-                            <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition">
-                                <i class="fa-solid fa-landmark-flag"></i>
-                            </div>
-                            <span class="font-bold text-slate-900 dark:text-white text-sm">Депутаты</span>
-                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Заневское ГП и ЗакС ЛО</span>
+                            <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Сформировать документ</span>
                         </button>
 
                         <button onclick="showSection('contacts')" class="flex flex-col items-center justify-center p-6 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-md hover:border-blue-500 transition group">
@@ -172,76 +169,11 @@
                             <span class="font-bold text-slate-900 dark:text-white text-sm">Куда писать</span>
                             <span class="text-xs text-slate-500 dark:text-slate-400 mt-1">Справочник ведомств</span>
                         </button>
+
                     </div>
                 </div>
             </div>
             <div class="absolute inset-0 opacity-10 dark:opacity-5 pointer-events-none bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        </section>
-
-        <!-- SECTION: Укрытия в Янино-1 при ЧС -->
-        <section id="section-shelters" class="page-section hidden py-16 bg-amber-50/40 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="mb-6">
-                    <button onclick="showSection('home')" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
-                        <i class="fa-solid fa-arrow-left"></i> На главную
-                    </button>
-                </div>
-
-                <div class="text-center max-w-3xl mx-auto mb-10">
-                    <span class="text-amber-700 dark:text-amber-400 text-xs font-bold uppercase tracking-wider bg-amber-100 dark:bg-amber-950 px-3 py-1 rounded-full border border-amber-300 dark:border-amber-800">Гражданская оборона</span>
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Укрытия и заглубленные помещения в Янино-1</h2>
-                    <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Согласно рекомендациям МЧС РФ и нормам гражданской обороны, в качестве заглубленных укрытий при ЧС для жителей многоквартирных домов используются подвальные помещения МКД, подземные паркинги и специализированные защитные сооружения.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm">
-                        <div class="w-12 h-12 bg-amber-500/10 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-building"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Подвалы многоквартирных домов</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-                            Ближайшие подвальные помещения ваших жилых домов (ЖК «Ясно.Янино», ЖК «Янинский Каскад», ЖК «Землянино», ЖК «Янила Кантри» и др.). Ключи находятся у вашей управляющей компании и ТСЖ.
-                        </p>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm">
-                        <div class="w-12 h-12 bg-amber-500/10 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-square-parking"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Подземные паркинги</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-                            Заглубленные автостоянки и цокольные уровни паркингов новостроек поселка Янино-1. Обладают повышенной защитой от взрывных волн и осколков.
-                        </p>
-                    </div>
-
-                    <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-amber-200 dark:border-slate-700 shadow-sm">
-                        <div class="w-12 h-12 bg-amber-500/10 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                        </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Интерактивный реестр МЧС</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-3">
-                            Официальный реестр защитных сооружений ГО Всеволожского муниципального района Ленинградской области.
-                        </p>
-                        <a href="https://vsevreg.ru/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline">
-                            Сайт Администрации района <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border-2 border-amber-500/40 shadow-md">
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-circle-exclamation text-amber-500"></i> Алгоритм действий при сигнале «ВНИМАНИЕ ВСЕМ!»
-                    </h3>
-                    <ol class="list-decimal list-inside space-y-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
-                        <li><strong>Включите радио или ТВ:</strong> Прослушайте экстренное сообщение от органов МЧС и Администрации.</li>
-                        <li><strong>Возьмите «тревожный набор»:</strong> Документы, деньги, аптечку, запас воды и продукты на 2-3 суток.</li>
-                        <li><strong>Перекройте коммуникации:</strong> Выключите газ, воду и отключите электричество в квартире.</li>
-                        <li><strong>Спуститесь в укрытие:</strong> Используйте подвал своего дома или ближайший подземный паркинг. Не используйте лифт!</li>
-                    </ol>
-                </div>
-            </div>
         </section>
 
         <!-- SECTION: Экстренные телефоны -->
@@ -312,12 +244,11 @@
                                 <span class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300 bg-amber-100 dark:bg-amber-950 px-2.5 py-1 rounded-lg">МЧС</span>
                                 <i class="fa-solid fa-fire-extinguisher text-amber-500 text-xl"></i>
                             </div>
-                            <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Пожарная охрана</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Возгорания, задымления, пожары</p>
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Пожарная часть №149 (Янино-1)</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-4">Ясная ул., 7 / дежурный диспетчер</p>
                         </div>
-                        <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
-                            <a href="tel:101" class="text-2xl font-bold text-amber-600 dark:text-amber-400 hover:underline">101</a>
-                            <span class="block text-[11px] text-slate-400 mt-1">С мобильного телефона</span>
+                        <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                            <a href="tel:101" class="text-xl font-bold text-amber-600 dark:text-amber-400 hover:underline">101 / (812) 509-68-40</a>
                         </div>
                     </div>
 
@@ -367,13 +298,13 @@
                     <span class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider bg-blue-50 dark:bg-blue-950 px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800">Мониторинг территории</span>
                     <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Реестр ключевых проблем Янино-1</h2>
                     <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                        Детальный перечень критических инфраструктурных угроз, вопросов социальной сферы (поликлиника, школы, сады) и благоустройства, требующих срочного вмешательства органов власти.
+                        Детальный перечень критических инфраструктурных угроз, вопросов социальной сферы (здравоохранение, школы, сады) и благоустройства.
                     </p>
                 </div>
 
                 <div class="space-y-6">
                     
-                    <!-- 1. ПОЛИКЛИНИКА И ЗДРАВООХРАНЕНИЕ -->
+                    <!-- ПОЛИКЛИНИКА (ЗДРАВООХРАНЕНИЕ) -->
                     <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border-2 border-red-500/50 shadow-md">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                             <div class="flex items-center gap-3">
@@ -381,31 +312,28 @@
                                     <i class="fa-solid fa-hospital-user"></i>
                                 </div>
                                 <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950 px-2.5 py-0.5 rounded-md">Критическая проблема / Здравоохранение</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Строительство полноценной Поликлиники и дефицит врачей в Янино-1</h3>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950 px-2.5 py-0.5 rounded-md">Здравоохранение / Критическая необходимость</span>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Строительство полноценной Поликлиники и дефицит узких специалистов</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <div class="lg:col-span-2 space-y-3">
                                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Существующая врачебная амбулатория физически не справляется с непрерывным потоком пациентов из-за стремительного прироста населения. Жители Янино-1 лишены возможности оперативно получать первичную медицинскую помощь по месту жительства.
-                                </p>
-                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Отсутствие специалистов:</strong> В поселке катастрофически не хватает узких специалистов (неврологов, кардиологов, ЛОРов, окулистов, эндокринологов и др.), а также детских врачей. Жители вынуждены ездить на приемы во Всеволожск и Заневку, стоя в многочасовых пробах и очередях.
+                                    <strong>Суть проблемы:</strong> Существующая врачебная амбулатория в Янино-1 катастрофически перегружена и физически не справляется с непрерывным потоком пациентов. Жители поселка фактически лишены возможности получать качественную и своевременную медицинскую помощь по месту жительства.
                                 </p>
                             </div>
                             <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить требование в Комитет по здравоохранению ЛО.</p>
+                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить требование в Комитет по здравоохранению Ленинградской области.</p>
                                 <button onclick="showSection('generator'); presetTopic('polyclinic');" class="w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95 shadow-md shadow-red-500/10">
                                     <i class="fa-solid fa-pen-to-square"></i>
-                                    <span>Обращение по Поликлинике</span>
+                                    <span>Обращение по поликлинике</span>
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. ШКОЛЫ И САДЫ -->
+                    <!-- ШКОЛЫ И САДЫ -->
                     <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border-2 border-indigo-500/50 shadow-md">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                             <div class="flex items-center gap-3">
@@ -414,17 +342,14 @@
                                 </div>
                                 <div>
                                     <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-950 px-2.5 py-0.5 rounded-md">Социальная инфраструктура</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Дефицит мест в школах и детских садах, ускорение строительства</h3>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Дефицит мест в школах и детских садах, ускорение строительства новых объектов</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <div class="lg:col-span-2 space-y-3">
                                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Действующие школы и детские сады перегружены. Молодые семьи сталкиваются с нехваткой мест, из-за чего дети вынуждены учиться во вторую смену либо ездить в соседние населенные пункты.
-                                </p>
-                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Требования жителей:</strong> Жесткий контроль Комитета по образованию ЛО за сроками сдачи строящихся объектов и ускорение их проектирования.
+                                    <strong>Суть проблемы:</strong> Существующие образовательные учреждения в Янино-1 работают с сильной перегрузкой. Молодые семьи сталкиваются с нехваткой мест в детских садах и переполненностью классов в школах.
                                 </p>
                             </div>
                             <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
@@ -437,28 +362,28 @@
                         </div>
                     </div>
 
-                    <!-- 3. ПОЛИЦИЯ -->
-                    <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
+                    <!-- ПОЛИЦИЯ -->
+                    <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border-2 border-red-500/50 shadow-md">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                             <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl shrink-0">
+                                <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-600 dark:text-red-400 flex items-center justify-center text-xl shrink-0">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
                                 <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950 px-2.5 py-0.5 rounded-md">Безопасность</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Строительство Полицейского участка в Янино-1</h3>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-950 px-2.5 py-0.5 rounded-md">Правопорядок</span>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Строительство полноценного Полицейского участка в Янино-1</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <div class="lg:col-span-2 space-y-3">
                                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Отсутствие стационарного отдела полиции и опорного пункта при численности населения свыше 26 000 человек. Наряды едут из Всеволожска.
+                                    <strong>Суть проблемы:</strong> Численность населения давно превысила десятки тысяч жителей. При этом отсутствует стационарный отдел полиции и пункт участковых, наряды едут из Всеволожска.
                                 </p>
                             </div>
                             <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить обращение в ГУ МВД по СПб и ЛО.</p>
-                                <button onclick="showSection('generator'); presetTopic('police');" class="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95">
+                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить требование в ГУ МВД по СПб и ЛО.</p>
+                                <button onclick="showSection('generator'); presetTopic('police');" class="w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95 shadow-md shadow-red-500/10">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                     <span>Обращение по полиции</span>
                                 </button>
@@ -466,28 +391,28 @@
                         </div>
                     </div>
 
-                    <!-- 4. БЛАГОУСТРОЙСТВО И БОЛОТО -->
-                    <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
+                    <!-- БЛАГОУСТРОЙСТВО И БОЛОТО -->
+                    <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border-2 border-amber-500/50 shadow-md">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
                                     <i class="fa-solid fa-triangle-exclamation"></i>
                                 </div>
                                 <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2.5 py-0.5 rounded-md">Благоустройство</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Мусор в канавах (ул. Голландская) и опасное болото у ЖК «Землянино»</h3>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2.5 py-0.5 rounded-md">Благоустройство и безопасность</span>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Мусор в канавах (ул. Голландская) и опасный котлован у ЖК «Землянино»</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <div class="lg:col-span-2 space-y-3">
                                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Заброшенные водоотводные канавы по Голландской улице и опасный открытый котлован возле остановки общественного транспорта.
+                                    <strong>Суть проблемы:</strong> Водоотводные канавы по ул. Голландская захламлены мусором. Возле остановки у ЖК «Землянино» образовалось глубокое незагороженное болото, создающее опасность для детей.
                                 </p>
                             </div>
                             <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить требование в Администрацию Заневского ГП.</p>
-                                <button onclick="showSection('generator'); presetTopic('landscaping');" class="w-full inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95">
+                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Требовать расчистки канав и ограждения болота.</p>
+                                <button onclick="showSection('generator'); presetTopic('landscaping');" class="w-full inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95 shadow-md shadow-amber-500/10">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                     <span>Обращение по канавам</span>
                                 </button>
@@ -495,59 +420,30 @@
                         </div>
                     </div>
 
-                    <!-- 5. ДОРОГИ -->
-                    <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
-                        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl shrink-0">
-                                    <i class="fa-solid fa-road"></i>
-                                </div>
-                                <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 bg-amber-100 dark:bg-amber-950 px-2.5 py-0.5 rounded-md">Дороги</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Аварийность и отсутствие тротуаров: ул. Объездная и Кольцевая</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                            <div class="lg:col-span-2 space-y-3">
-                                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Узкие аварийные проезды без пешеходных тротуаров и освещения.
-                                </p>
-                            </div>
-                            <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить жалобу в Дорожный комитет ЛО.</p>
-                                <button onclick="showSection('generator'); presetTopic('road');" class="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                    <span>Обращение по дороге</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 6. АВТОБУС 468 -->
+                    <!-- ДОРОГИ И АВТОБУС № 468 -->
                     <div class="bg-slate-50 dark:bg-slate-900 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700/80 shadow-sm">
                         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl shrink-0">
-                                    <i class="fa-solid fa-bus"></i>
+                                    <i class="fa-solid fa-road"></i>
                                 </div>
                                 <div>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950 px-2.5 py-0.5 rounded-md">Общественный транспорт</span>
-                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Маршрут № 468: Увеличение автобусов до 20 единиц</h3>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-950 px-2.5 py-0.5 rounded-md">Транспорт и Дороги</span>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-0.5">Улицы Объездная-Кольцевая и автобус № 468</h3>
                                 </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                             <div class="lg:col-span-2 space-y-3">
                                 <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                                    <strong>Суть проблемы:</strong> Острый дефицит подвижного состава, давка на остановках и переполненные салоны.
+                                    <strong>Суть проблемы:</strong> Узкая проезжая часть без тротуаров и освещения на ул. Объездная и Кольцевая. Необходимость увеличения числа автобусов большой вместимости № 468 до 20 единиц.
                                 </p>
                             </div>
                             <div class="flex flex-col justify-between bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Направить обращение в Комитет по транспорту ЛО.</p>
+                                <p class="text-xs text-slate-700 dark:text-slate-300 mb-4">Обращение в Комтранс ЛО и Дорожный комитет.</p>
                                 <button onclick="showSection('generator'); presetTopic('bus468');" class="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95">
                                     <i class="fa-solid fa-pen-to-square"></i>
-                                    <span>Обращение по 468 автобусу</span>
+                                    <span>Обращение по транспорту</span>
                                 </button>
                             </div>
                         </div>
@@ -557,7 +453,7 @@
             </div>
         </section>
 
-        <!-- SECTION: Депутаты -->
+        <!-- SECTION: Депутаты и Партийные Фракции (ОБНОВЛЕННЫЙ И РАСШИРЕННЫЙ РАЗДЕЛ) -->
         <section id="section-deputies" class="page-section hidden py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-200 dark:border-slate-800">
             <div class="mb-6">
                 <button onclick="showSection('home')" class="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline">
@@ -565,13 +461,17 @@
                 </button>
             </div>
 
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">Парламентский контроль</span>
-                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-3">Депутаты и Партийные Фракции</h2>
-                <p class="text-slate-600 dark:text-slate-400">Депутаты местного самоуправления Заневского городского поселения и областного парламента помогают решать проблемы здравоохранения, образования и инфраструктуры.</p>
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider bg-sky-50 dark:bg-sky-950 px-3 py-1 rounded-full border border-sky-200 dark:border-sky-800">Народный контроль</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-3 mb-4">Депутаты Заневского ГП и Партийные Фракции</h2>
+                <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
+                    Справочник депутатов местного самоуправления Заневского городского поселения, Всеволожского муниципального района и областного парламента (ЗакС ЛО). Контакты, адреса общественных приемных и график личного приема граждан.
+                </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Совет депутатов Заневского ГП (Местный уровень) -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-purple-500/50 shadow-md flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -580,36 +480,50 @@
                         </div>
                         <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Совет депутатов Заневского ГП</h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                            <strong>Сфера помощи:</strong> Локальное благоустройство Янино-1, контроль за уборкой мусора, состояние канав, дорог местного значения и дворов.
+                            <strong>Сфера вопросов:</strong> Благоустройство Янино-1, местные дороги, уборка мусора, проверка подвалов и укрытий, детские площадки, правила землепользования.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs">
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
                         <div class="flex justify-between items-center">
-                            <span class="text-slate-500">Официальный сайт:</span>
-                            <a href="https://zanevkaorg.ru/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">zanevkaorg.ru</a>
+                            <span class="text-slate-400">Приемная:</span>
+                            <span class="font-medium">д. Заневка, д. 48</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Телефон:</span>
+                            <a href="tel:+78126790698" class="text-blue-600 dark:text-blue-400 hover:underline">+7 (812) 679-06-98</a>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://zanevkaorg.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">zanevkaorg.ru</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- 2. Единая Россия -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">ЛДПР</span>
-                            <i class="fa-solid fa-building-columns text-sky-500"></i>
+                            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">ЕР</span>
+                            <i class="fa-solid fa-flag text-blue-500"></i>
                         </div>
-                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Фракция ЛДПР в ЗакС ЛО</h3>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Фракция «Единая Россия» (ЗакС ЛО / Район)</h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                            <strong>Сфера помощи:</strong> Транспортные коллапсы,  жалобы на работу перевозчиков.
+                            <strong>Сфера вопросов:</strong> Содействие в строительстве школ, детских садов, федеральные и региональные программы благоустройства.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs">
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
                         <div class="flex justify-between items-center">
-                            <span class="text-slate-500">Приемная:</span>
-                            <a href="https://spb.ldpr.ru/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Сайт ЛДПР</a>
+                            <span class="text-slate-400">Приемная:</span>
+                            <span class="font-medium">г. Всеволожск, ул. Героева</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://lenobl.er.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">lenobl.er.ru</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- 3. КПРФ -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -618,16 +532,93 @@
                         </div>
                         <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Фракция КПРФ в ЗакС ЛО</h3>
                         <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                            <strong>Сфера помощи:</strong> Строительство социальных объектов (поликлиника, школы, детсады).
+                            <strong>Сфера вопросов:</strong> Защита социальных прав граждан, контроль за строительством поликлиники и медицинских учреждений в Янино-1.
                         </p>
                     </div>
-                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs">
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
                         <div class="flex justify-between items-center">
-                            <span class="text-slate-500">Приемная:</span>
-                            <a href="https://lokkprf.ru/" target="_blank" rel="noopener noreferrer" class="text-blue-600 dark:text-blue-400 hover:underline">Сайт КПРФ ЛО</a>
+                            <span class="text-slate-400">Областной комитет:</span>
+                            <span class="font-medium">Санкт-Петербург</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://lokkprf.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">lokkprf.ru</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- 4. ЛДПР -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-950 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">ЛДПР</span>
+                            <i class="fa-solid fa-building-columns text-sky-500"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Фракция ЛДПР в ЗакС ЛО</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            <strong>Сфера вопросов:</strong> Решение транспортных проблем, запуск и контроль автобусных маршрутов (в т.ч. № 468), жалобы на ЖКХ.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Приемная:</span>
+                            <span class="font-medium">ЛО, Всеволожский р-н</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://spb.ldpr.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">spb.ldpr.ru</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Справедливая Россия -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">СРЗП</span>
+                            <i class="fa-solid fa-hand-holding-heart text-amber-500"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Фракция «СР — За правду»</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            <strong>Сфера вопросов:</strong> Проверка тарифов ЖКХ, контроль за качеством работы управляющих компаний, защита прав жильцов новостроек.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Региональное отделение:</span>
+                            <span class="font-medium">Ленинградская область</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://lenoblast.spravedlivo.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">lenoblast.spravedlivo.ru</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Яблоко -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">ЯБЛОКО</span>
+                            <i class="fa-solid fa-leaf text-emerald-500"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-2">Партия «Яблоко» (ЛО)</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                            <strong>Сфера вопросов:</strong> Экологический контроль, защита зеленых зон, градостроительные споры и публичные слушания.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700/60 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Обращения:</span>
+                            <span class="font-medium">Электронная приемная</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-500">Сайт:</span>
+                            <a href="https://yabloko.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline font-semibold">yabloko.ru</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -643,7 +634,7 @@
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <span class="text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">Интерактивный мастер</span>
                     <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mt-1 mb-3">Генератор официальных обращений</h2>
-                    <p class="text-slate-600 dark:text-slate-400">Заполните поля, выберите тему, и система сформирует юридически корректный текст заявления для отправки в электронную приемную.</p>
+                    <p class="text-slate-600 dark:text-slate-400">Сформируйте официальное заявление для отправки в приемную выбранного ведомства.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -657,9 +648,10 @@
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Выберите тему вопроса</label>
                                 <select id="topicSelect" onchange="generateAppeal()" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none transition">
-                                    <option value="polyclinic">Здравоохранение: Строительство Поликлиники и дефицит узких врачей</option>
-                                    <option value="schools">Образование: Дефицит мест в школах и детских садах, ускорение строительства</option>
-                                    <option value="landscaping">Благоустройство: мусор в канавах (ул. Голландская) и опасное болото у ЖК «Землянино»</option>
+                                    <option value="polyclinic">Здравоохранение: Строительство полноценной поликлиники в Янино-1 и дефицит врачей</option>
+                                    <option value="shelter">ГО и ЧС: Проверка, подготовка и доступ к укрытию/подвалу дома</option>
+                                    <option value="schools">Образование: Дефицит мест в школах и детских садах Янино-1</option>
+                                    <option value="landscaping">Благоустройство: мусор в канавах (ул. Голландская) и опасный котлован у ЖК «Землянино»</option>
                                     <option value="police">Строительство полноценного Полицейского участка в Янино-1</option>
                                     <option value="road">Аварийное состояние, отсутствие тротуара и освещения (ул. Объездная — Кольцевая)</option>
                                     <option value="bus468">Увеличение числа автобусов № 468 до 20 единиц (интервал 5-10 мин)</option>
@@ -743,7 +735,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- Здравоохранение (Поликлиника) -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-red-500/40 shadow-sm">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-red-500/50 shadow-sm">
                     <div class="flex items-start justify-between mb-4">
                         <div class="w-10 h-10 rounded-lg bg-red-50 dark:bg-red-950 text-red-600 dark:text-red-400 flex items-center justify-center font-bold">
                             <i class="fa-solid fa-hospital-user"></i>
@@ -751,11 +743,29 @@
                         <span class="text-xs bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 px-2 py-1 rounded-md font-semibold">Здравоохранение</span>
                     </div>
                     <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Комитет по здравоохранению ЛО</h3>
-                    <p class="text-xs text-red-600 dark:text-red-400 mb-3 font-semibold">Сфера: Строительство полноценной поликлиники, привлечение узких специалистов и работа амбулатории</p>
+                    <p class="text-xs text-red-600 dark:text-red-400 mb-3 font-semibold">Сфера: Поликлиника в Янино-1, нехватка узких специалистов, запись к врачам</p>
                     <div class="space-y-2 text-xs border-t border-slate-100 dark:border-slate-700 pt-3">
                         <div class="flex justify-between">
                             <span class="text-slate-500">Сайт:</span>
                             <a href="https://zdrav.lenobl.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">zdrav.lenobl.ru</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ГО и ЧС МЧС -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border-2 border-amber-500/50 shadow-sm">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="w-10 h-10 rounded-lg bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="text-xs bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 px-2 py-1 rounded-md font-semibold">Гражданская оборона</span>
+                    </div>
+                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">ГУ МЧС России по Ленобласти</h3>
+                    <p class="text-xs text-amber-700 dark:text-amber-400 mb-3 font-semibold">Сфера: Защитные сооружения ГО, подготовка подвалов/паркингов к ЧС</p>
+                    <div class="space-y-2 text-xs border-t border-slate-100 dark:border-slate-700 pt-3">
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Приемная МЧС:</span>
+                            <a href="https://47.mchs.gov.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">47.mchs.gov.ru</a>
                         </div>
                     </div>
                 </div>
@@ -766,7 +776,7 @@
                         <div class="w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold">
                             <i class="fa-solid fa-school"></i>
                         </div>
-                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-md font-medium">Образование</span>
+                        <span class="text-xs bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-md font-semibold">Образование</span>
                     </div>
                     <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Комитет образования ЛО</h3>
                     <p class="text-xs text-indigo-600 dark:text-indigo-300 mb-3 font-semibold">Сфера: Школы, детские сады, очереди, строительство новых мест</p>
@@ -778,24 +788,7 @@
                     </div>
                 </div>
 
-                <!-- Строительство социальных объектов -->
-                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-person-digging"></i>
-                        </div>
-                        <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-md font-medium">Строительный блок</span>
-                    </div>
-                    <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Комитет по строительству ЛО</h3>
-                    <p class="text-xs text-emerald-600 dark:text-emerald-400 mb-3 font-semibold">Сфера: Контроль за застройщиками по сдаче школ, садов и поликлиники</p>
-                    <div class="space-y-2 text-xs border-t border-slate-100 dark:border-slate-700 pt-3">
-                        <div class="flex justify-between">
-                            <span class="text-slate-500">Сайт:</span>
-                            <a href="https://stroy.lenobl.ru/" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">stroy.lenobl.ru</a>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- Администрация -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div class="flex items-start justify-between mb-4">
                         <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
@@ -804,7 +797,7 @@
                         <span class="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded-md font-medium">Муниципальный уровень</span>
                     </div>
                     <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1">Администрация Заневского ГП</h3>
-                    <p class="text-xs text-purple-600 dark:text-purple-400 mb-3 font-semibold">Сфера: Благоустройство, мусор, канавы, укрытия, освещение</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400 mb-3 font-semibold">Сфера: Благоустройство, мусор, канавы, ключи от укрытий/подвалов</p>
                     <div class="space-y-2 text-xs border-t border-slate-100 dark:border-slate-700 pt-3">
                         <div class="flex justify-between">
                             <span class="text-slate-500">Сайт:</span>
@@ -813,6 +806,7 @@
                     </div>
                 </div>
 
+                <!-- МВД -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div class="flex items-start justify-between mb-4">
                         <div class="w-10 h-10 rounded-lg bg-red-50 dark:bg-red-950 text-red-600 dark:text-red-400 flex items-center justify-center font-bold">
@@ -830,6 +824,7 @@
                     </div>
                 </div>
 
+                <!-- Комтранс ЛО -->
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
                     <div class="flex items-start justify-between mb-4">
                         <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
@@ -864,7 +859,7 @@
                 </div>
                 <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Обратная связь с администратором</h2>
                 <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base mb-6 leading-relaxed">
-                    Если у вас есть предложения по дополнению реестра проблем, замечания к работе сайта или вы хотите передать информацию для публикации, вы можете напрямую связаться с администратором портала по электронной почте:
+                    Если у вас есть предложения по дополнению реестра проблем или контактов депутатов, вы можете напрямую связаться с администратором портала по электронной почте:
                 </p>
 
                 <div class="inline-flex items-center gap-3 bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 px-6 py-4 rounded-xl text-blue-800 dark:text-blue-300 font-mono text-base sm:text-lg font-bold mb-6 select-all">
@@ -879,6 +874,153 @@
         </section>
 
     </main>
+
+    <!-- POPUP MODAL: Укрытия и ЗС ГО в Янино-1 -->
+    <div id="shelterModal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden my-auto">
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-amber-600 via-amber-700 to-yellow-600 text-white p-4 sm:p-6 flex items-center justify-between shrink-0">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-xl font-bold">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-amber-100">МЧС РОССИИ / ГО ВСЕВОЛОЖСКИЙ РАЙОН</span>
+                        <h2 class="text-lg sm:text-2xl font-extrabold tracking-tight">Реестр Укрытий и Защитных Сооружений в Янино-1</h2>
+                    </div>
+                </div>
+                <button onclick="closeShelterModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-white text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-6 text-slate-800 dark:text-slate-200 text-xs sm:text-sm">
+                
+                <!-- Notice Banner -->
+                <div class="bg-amber-50 dark:bg-amber-950/60 border border-amber-200 dark:border-amber-800/80 p-4 rounded-xl flex items-start gap-3">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-600 dark:text-amber-400 text-lg mt-0.5 shrink-0"></i>
+                    <div class="leading-relaxed">
+                        <strong>Официальный порядок гражданской обороны МЧС:</strong> В современных жилых кварталах укрытием для населения при возникновении чрезвычайных ситуаций служат <strong>заглубленные помещения подземных паркингов и подвалы МКД</strong>, отвечающие требованиям по высоте и перекрытиям.
+                    </div>
+                </div>
+
+                <!-- Search Input -->
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">Поиск укрытия по Вашему адресу в Янино-1:</label>
+                    <div class="relative">
+                        <input type="text" id="shelterSearchInput" oninput="filterShelters()" placeholder="Введите улицу или номер дома (напр. Голландская, Ясная, Кольцевая)..." class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 rounded-xl py-3 pl-10 pr-4 text-sm focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                    </div>
+                </div>
+
+                <!-- Shelter List Table -->
+                <div class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 text-xs uppercase font-bold border-b border-slate-200 dark:border-slate-800">
+                                    <th class="p-3 sm:p-4">Локация / Адрес в Янино-1</th>
+                                    <th class="p-3 sm:p-4">Тип сооружения</th>
+                                    <th class="p-3 sm:p-4">Ответственный / Ключи</th>
+                                </tr>
+                            </thead>
+                            <tbody id="shelterTableBody" class="divide-y divide-slate-100 dark:divide-slate-800/60 bg-white dark:bg-slate-900">
+                                
+                                <tr class="shelter-row hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                                    <td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white">
+                                        ул. Голландская, все многоквартирные дома
+                                    </td>
+                                    <td class="p-3 sm:p-4">
+                                        <span class="bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-semibold">Подземные паркинги / Подвалы МКД</span>
+                                    </td>
+                                    <td class="p-3 sm:p-4 text-xs text-slate-500 dark:text-slate-400">
+                                        Управляющая компания дома / Диспетчерская ЖК
+                                    </td>
+                                </tr>
+
+                                <tr class="shelter-row hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                                    <td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white">
+                                        ЖК «Землянино» / Военный городок
+                                    </td>
+                                    <td class="p-3 sm:p-4">
+                                        <span class="bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-semibold">Заглубленные подвальные помещения</span>
+                                    </td>
+                                    <td class="p-3 sm:p-4 text-xs text-slate-500 dark:text-slate-400">
+                                        УК / Старший по подъезду
+                                    </td>
+                                </tr>
+
+                                <tr class="shelter-row hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                                    <td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white">
+                                        ул. Ясная (ЖК «Ясно.Янино»)
+                                    </td>
+                                    <td class="p-3 sm:p-4">
+                                        <span class="bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-semibold">Подземные автостоянки и технические этажи</span>
+                                    </td>
+                                    <td class="p-3 sm:p-4 text-xs text-slate-500 dark:text-slate-400">
+                                        Управляющая организация ЖК
+                                    </td>
+                                </tr>
+
+                                <tr class="shelter-row hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                                    <td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white">
+                                        ул. Объездная и Кольцевая
+                                    </td>
+                                    <td class="p-3 sm:p-4">
+                                        <span class="bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 px-2.5 py-1 rounded-md text-xs font-semibold">Подвалы специализированных корпусов</span>
+                                    </td>
+                                    <td class="p-3 sm:p-4 text-xs text-slate-500 dark:text-slate-400">
+                                        Администрация ЗГП / Служба ГО
+                                    </td>
+                                </tr>
+
+                                <tr class="shelter-row hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                                    <td class="p-3 sm:p-4 font-semibold text-slate-900 dark:text-white">
+                                        Пожарная часть №149 (ул. Ясная, д. 7)
+                                    </td>
+                                    <td class="p-3 sm:p-4">
+                                        <span class="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-2.5 py-1 rounded-md text-xs font-semibold">Оперативный пункт ЧС / МЧС</span>
+                                    </td>
+                                    <td class="p-3 sm:p-4 text-xs text-slate-500 dark:text-slate-400">
+                                        Дежурный караул ПЧ №149
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Emergency Instructions -->
+                <div class="bg-slate-50 dark:bg-slate-950 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800 space-y-3">
+                    <h4 class="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bullhorn text-amber-600 dark:text-amber-400"></i> Действия при сигнале гражданской обороны «ВНИМАНИЕ ВСЕМ!»:
+                    </h4>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-600 dark:text-slate-300 text-xs">
+                        <li>Включите радиоприемник или телевизор для прослушивания экстренных сообщений МЧС.</li>
+                        <li>Возьмите с собой «тревожный чемоданчик» (документы, медикаменты, запас воды на 3 суток, фонарик).</li>
+                        <li>Отключите газ, воду, электричество в квартире и закройте окна.</li>
+                        <li>Спуститесь в подземный паркинг или подвал Вашего дома. Не пользуйтесь лифтом!</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-100 dark:bg-slate-950 p-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+                <button onclick="closeShelterModal(); showSection('generator'); presetTopic('shelter');" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition active:scale-95 shadow-md shadow-amber-500/10">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Подать запрос по проверке подвала Вашего дома</span>
+                </button>
+                <button onclick="closeShelterModal()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold rounded-xl text-xs transition">
+                    Закрыть окно
+                </button>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-8 mt-auto">
@@ -914,6 +1056,30 @@
             }
         }
 
+        /* Modal Logic for Shelters */
+        function openShelterModal() {
+            document.getElementById('shelterModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeShelterModal() {
+            document.getElementById('shelterModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterShelters() {
+            const query = document.getElementById('shelterSearchInput').value.toLowerCase().trim();
+            const rows = document.querySelectorAll('.shelter-row');
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
         const themeToggleBtn = document.getElementById('themeToggle');
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
@@ -946,37 +1112,43 @@
                 authority: "Комитет по здравоохранению Ленинградской области",
                 link: "https://zdrav.lenobl.ru/",
                 linkText: "Перейти в приемную Комитета по здравоохранению ЛО",
-                getText: (name, addr) => `В Комитет по здравоохранению Ленинградской области\nКопия: Губернатору Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу острого дефицита медицинской помощи, отсутствия узких специалистов и необходимости ускорения строительства Поликлиники в г.п. Янино-1\n\nУважаемые руководители!\n\nОбращаюсь к вам от имени жителей стремительно застраивающегося городского поселения Янино-1 Всеволожского района.\n\nНа сегодняшний день действующая врачебная амбулатория категорически не справляется с непрерывным потоком пациентов из-за взрывного роста численности жителей поселка. В Янино-1 отсутствует возможность получить консультации узких специалистов (неврологов, ЛОРов, кардиологов, эндокринологов, офтальмологов и др.), а также специализированную медицинскую помощь для детей. Жители вынуждены тратить многие часы на поездки в больницы Всеволожска и соседних населенных пунктов.\n\nНа основании вышеизложенного просим вас:\n1. Предоставить исчерпывающие данные о текущих сроках проектирования, строительства и ввода в эксплуатацию полноценной городской поликлиники в г.п. Янино-1.\n2. Принять оперативные меры по укомплектованию существующей амбулатории узкими специалистами и терапевтами для оказания своевременной помощи населению.\n3. Организовать выездные приемы узких врачей-специалистов в Янино-1 до момента открытия полноценной поликлиники.\n\nОтвет просим направить в установленный законом 30-дневный срок в электронном виде.`
+                getText: (name, addr) => `В Комитет по здравоохранению Ленинградской области\nКопия: Администрация Заневского городского поселения\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу острого дефицита врачей, перегрузки врачебной амбулатории и необходимости ускорения строительства полноценной Поликлиники в г.п. Янино-1\n\nУважаемые руководители!\n\nОбращаюсь к вам по вопросу неудовлетворительного состояния медицинского обслуживания в г.п. Янино-1 Всеволожского района.\n\nНаселение нашего поселения превысило 26 000 человек и продолжает быстро расти. Существующая врачебная амбулатория физически не справляется с потоком пациентов. В поселке острейшим образом ощущается дефицит врачей узких специальностей (неврологов, офтальмологов, лоров, эндокринологов), из-за чего жители вынуждены ездить во Всеволожск или платные клиники.\n\nПросим вас:\n1. Взять под личный контроль и ускорить сроки строительства полноценного здания поликлиники в г.п. Янино-1.\n2. Принять временные меры по выездному приему узких специалистов в амбулатории Янино-1.\n\nОтвет просим направить в установленный законом 30-дневный срок в электронном виде.`
+            },
+            shelter: {
+                authority: "Администрация Заневского ГП / ГУ МЧС по Ленинградской области",
+                link: "https://zanevkaorg.ru/",
+                linkText: "Перейти в приемную Администрации Заневского ГП",
+                getText: (name, addr) => `В Администрацию Заневского городского поселения\nВ Главное управление МЧС России по Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо проверке готовности, расчистке и обеспечении беспрепятственного доступа к подземному паркингу / подвальному укрытию МКД\n\nУважаемые руководители!\n\nПрошу провести проверку технического состояния заглубленного подвального помещения / подземного паркинга многоквартирного дома по адресу: г.п. Янино-1, ${addr || '[Укажите адрес]'}.\n\nПросим проверить состояние освещения, отсутствие загромождения бытовым мусором, а также проверить порядок хранения и доступность ключей у управляющей компании на случай чрезвычайных ситуаций.`
             },
             schools: {
                 authority: "Комитет общего и профессионального образования Ленинградской области",
                 link: "https://edu.lenobl.ru/",
                 linkText: "Перейти в приемную Комитета образования ЛО",
-                getText: (name, addr) => `В Комитет общего и профессионального образования Ленинградской области\nКопия: Администрация Заневского городского поселения\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу острого дефицита мест в школах и детских садах и ускорения строительства новых образовательных объектов в г.п. Янино-1\n\nУважаемые руководители!\n\nОбращаюсь к вам по вопросу критической перегрузки существующих школ и детских садов в г.п. Янино-1.\n\nПросим принять исчерпывающие меры государственного контроля за застройщиками с целью недопущения срыва сроков сдачи социальных объектов и ускорить строительство новых школ и садов.`
+                getText: (name, addr) => `В Комитет общего и профессионального образования Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу дефицита мест в школах и детских садах в Янино-1\n\nУважаемые руководители!\n\nПросим предоставить информацию о сроках ввода в эксплуатацию новых школ и детских садов в г.п. Янино-1 и принять меры по ликвидации острой нехватки мест.`
             },
             landscaping: {
                 authority: "Администрация Заневского городского поселения",
                 link: "https://zanevkaorg.ru/",
                 linkText: "Перейти в приемную Администрации Заневского ГП",
-                getText: (name, addr) => `В Администрацию МО «Заневское городское поселение»\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо необходимости благоустройства территории, очистки канав от мусора по ул. Голландская и ликвидации опасного болота у остановки ЖК «Землянино»\n\nУважаемые руководители!\n\nПросим вас организовать работы по очистке водоотводных канав и принять меры по ликвидации или безопасному ограждению заброшенного котлована (болота) у остановки ЖК «Землянино».`
+                getText: (name, addr) => `В Администрацию МО «Заневское городское поселение»\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо благоустройстве канав по ул. Голландская и ликвидации опасного котлована (болота) у ЖК «Землянино»\n\nПросим организовать очистку канав и установить надежное ограждение вокруг опасного водного объекта во избежание несчастных случаев.`
             },
             police: {
                 authority: "ГУ МВД России по г. Санкт-Петербургу и Ленинградской области",
                 link: "https://78.мвд.рф/request_main",
                 linkText: "Перейти в Электронную приемную МВД",
-                getText: (name, addr) => `В Главное управление МВД России по г. Санкт-Петербургу и Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо необходимости строительства полноценного полицейского участка и обеспечения правопорядка в г.п. Янино-1\n\nУважаемые руководители!\n\nПросим рассмотреть вопрос о выделении помещения под стационарный пункт полиции и строительстве полнофункционального отдела полиции в Янино-1.`
+                getText: (name, addr) => `В Главное управление МВД России по г. Санкт-Петербургу и Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо необходимости строительства полноценного полицейского участка в г.п. Янино-1\n\nПросим рассмотреть вопрос о выделении помещений под стационарный опорный пункт и строительство полноценного здания полиции.`
             },
             road: {
                 authority: "Комитет по дорожному хозяйству ЛО / Администрация Заневского ГП",
                 link: "https://road.lenobl.ru/",
                 linkText: "Перейти в Электронную приемную Дорожного комитета",
-                getText: (name, addr) => `В Комитет по дорожному хозяйству Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nо приведении в нормативное состояние, расширении, освещении и устройстве тротуаров на улицах Объездная и Кольцевая в Янино-1`
+                getText: (name, addr) => `В Комитет по дорожному хозяйству Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо приведению в нормативное состояние, расширению и обустройству тротуаров по ул. Объездная и Кольцевая.`
             },
             bus468: {
                 authority: "Комитет Ленинградской области по транспорту",
                 link: "https://transport.lenobl.ru/",
                 linkText: "Перейти в Электронную приемную Комтранса ЛО",
-                getText: (name, addr) => `В Комитет по транспорту Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу работы автобусного маршрута № 468 и увеличения подвижного состава`
+                getText: (name, addr) => `В Комитет по транспорту Ленинградской области\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\nпо вопросу увеличения числа автобусов № 468 большой вместимости до 20 единиц.`
             },
             custom: {
                 authority: "Администрация / Профильный комитет ЛО",
@@ -984,7 +1156,7 @@
                 linkText: "Перейти в Электронную приемную Правительства ЛО",
                 getText: (name, addr) => {
                     const customText = document.getElementById('customDetails').value;
-                    return `Кому: В профильный орган государственной власти / местное самоуправление\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\n\n${customText || '[Опишите подробности вашей проблемы]'}\n\nПрошу рассмотреть данное обращение и принять меры.`;
+                    return `Кому: В профильный орган государственной власти\nОт: ${name || '[Укажите ФИО]'}\nАдрес проживания: г.п. Янино-1, ${addr || '[Укажите адрес]'}\n\nОБРАЩЕНИЕ\n\n${customText || '[Опишите подробности вашей проблемы]'}\n\nПрошу рассмотреть данное обращение и принять меры.`;
                 }
             }
         };
